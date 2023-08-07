@@ -22,4 +22,6 @@ CAT_API_KET = SUA_API_KEY_CAT_API
 ### A CAT_API_KEY pode ser obtida através do link:
 #### https://thecatapi.com
 
+### E por último, definir de quanto em tempo será trocado o header no CronJob
+
 ## Obrigado! 🐈
