@@ -1,5 +1,4 @@
 const { TwitterApi } = require('twitter-api-v2');
-const fs = require('fs');
 const axios = require('axios');
 const download = require('download');
 
@@ -24,9 +23,10 @@ class TwitterController {
     async tradeHeaderWithCats(){
         console.log('starting trading header with cats');
         try{
-            const random_number = Math.floor(Math.random() * 10);
-            const cat_image = await this.request_cats(`limit=100&page=${random_number}`);
-            const image = await download(cat_image.data[random_number].url);
+            const random_page = Math.floor(Math.random() * 10);
+            const random_image = Math.floor(Math.random() * 10);
+            const cat_image = await this.request_cats(`limit=100&page=${random_page}`);
+            const image = await download(cat_image.data[random_image].url);
             await this.client.v1.updateAccountProfileBanner(image, {
                 width: 1500,
                 height: 500,
